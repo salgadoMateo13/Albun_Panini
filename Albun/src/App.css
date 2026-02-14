@@ -1,0 +1,182 @@
+/* 1. Ajuste Global para que el fondo cubra todo sin bordes */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* 2. Contenedor Principal con la imagen de fondo "world.png" */
+.album-page {
+  /* Fondo de leyendas con una capa oscura para que los cromos resalten */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+              url('/images/world.png');
+  
+  /* Propiedades para que cubra toda la pantalla */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: 'Arial Black', sans-serif;
+  position: relative;
+}
+
+/* 3. Título del Álbum */
+.album-header h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* 4. Galería de Cromos */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 5. El Cromo (Mona) Individual */
+.cromo {
+  background: white;
+  width: 180px;
+  padding: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6); /* Sombra fuerte para despegar del fondo */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cromo:hover {
+  transform: scale(1.08) rotate(1deg);
+}
+
+/* Parte superior del cromo (País y Bandera) */
+.cromo-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  color: white;
+  font-size: 10px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.mini-flag {
+  width: 20px;
+  border: 1px solid white;
+}
+
+/* Imagen del Jugador */
+.player-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+/* 6. Footer del Cromo (Donde el nombre ahora es NEGRO) */
+.cromo-footer {
+  background: #ffffff; /* Fondo blanco para contraste total */
+  padding: 8px 0;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.player-name {
+  color: #000000; /* NOMBRE EN NEGRO como solicitaste */
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 7. Estilos de la Vista de Detalle (Modal) */
+.detalle-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.detalle-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  text-align: center;
+}
+
+.img-large {
+  width: 100%;
+  border-radius: 5px;
+  border: 4px solid #f9f9f9;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.flag-large {
+  width: 45px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.detalle-modal h2 {
+  color: #000;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.edad-text {
+  color: #c0392b;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.contexto-text {
+  color: #333;
+  line-height: 1.5;
+  text-align: justify;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  padding: 0 10px;
+}
+
+.btn-volver {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.btn-volver:hover {
+  background: #1a252f;
+}
